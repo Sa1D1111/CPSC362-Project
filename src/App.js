@@ -74,29 +74,80 @@
 
 
 // App.js
+// import './App.css';
+// import React from 'react';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes instead of Switch
+
+// import CatBreedBox from './components/CatBreedBox';
+// import CatDescription from './components/CatDescription';
+
+// import catBreedsData from './catBreedsData.json';
+
+// function App() {
+//   return (
+//     <Router>
+//       <Routes> {/* Use Routes instead of Switch */}
+//         <Route path="/" element={<div className="App">
+//           {catBreedsData.map((breedData, index) => (
+//             <CatBreedBox
+//               key={index}
+//               breedName={breedData.breedName}
+//               imageSrc={breedData.imageSrc}
+//               description={breedData.description}
+//             />
+//           ))}
+//         </div>} />
+//         <Route path="/description/:breedName" element={<CatDescription />} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes instead of Switch
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import CatBreedBox from './components/CatBreedBox';
 import CatDescription from './components/CatDescription';
-
 import catBreedsData from './catBreedsData.json';
 
 function App() {
   return (
     <Router>
-      <Routes> {/* Use Routes instead of Switch */}
-        <Route path="/" element={<div className="App">
-          {catBreedsData.map((breedData, index) => (
-            <CatBreedBox
-              key={index}
-              breedName={breedData.breedName}
-              imageSrc={breedData.imageSrc}
-              description={breedData.description}
-            />
-          ))}
-        </div>} />
+      <header className="App-header">
+        <img
+          src="https://bestanimations.com/Animals/Mammals/Cats/cats/cute-kitty-animated-gif-12.gif"
+          alt="cat sleeping gif"
+          height="200px"
+          width="200px"
+        />
+        <h1>Cat Breed Recommendation App</h1>
+        <p>Which Cat Breed Is Best For You?</p>
+        <p className="summary">Take our quiz to find out which cat is suitable for you!</p>
+      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              {catBreedsData.map((breedData, index) => (
+                <CatBreedBox
+                  key={index}
+                  breedName={breedData.breedName}
+                  imageSrc={breedData.imageSrc}
+                  description={breedData.description}
+                />
+              ))}
+            </div>
+          }
+        />
         <Route path="/description/:breedName" element={<CatDescription />} />
       </Routes>
     </Router>
@@ -104,4 +155,3 @@ function App() {
 }
 
 export default App;
-
