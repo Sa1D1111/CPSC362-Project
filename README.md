@@ -1,6 +1,6 @@
-npm install
-npm install react-router-dom
-npm run start dev
+<p>npm install</p>
+<p>npm install react-router-dom </p>
+<p>npm run start</p>
 
 # Getting Started with Create React App
 
